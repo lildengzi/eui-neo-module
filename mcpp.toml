@@ -16,7 +16,6 @@ standard = "c++23"
     flags = [
       { glob = "engine/**/*.cpp", cxxflags = ["-fno-char8_t"] },
       { glob = "engine/**/*.c", cxxflags = ["-fno-char8_t"] },
-      { glob = "generated/**/*.cpp", cxxflags = ["-fno-char8_t"] },
     ]
     sources = [
       "mod/**/*.cppm",
@@ -25,7 +24,7 @@ standard = "c++23"
       "engine/core/platform/native_bridge.c",
       "engine/core/platform/network.cpp",
       "engine/core/platform/performance_stats.cpp",
-      "generated/eui_neo_platform_tu.cpp",
+      "engine/core/platform/platform.cpp",
       "engine/core/platform/tray_bridge.c",
       "engine/core/render/image.cpp",
       "engine/core/render/image_facade.cpp",
@@ -45,11 +44,6 @@ standard = "c++23"
       "engine/core/platform/ime_bridge.c",
       "engine/core/window/window_backend.cpp",
     ]
-
-[generated_files]
-    "generated/eui_neo_platform_tu.cpp" = """
-    #include "core/platform/platform.cpp"
-    """
 
 [dependencies]
     compat.freetype = "2.13.3"
