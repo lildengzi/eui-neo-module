@@ -1,0 +1,69 @@
+[package]
+name = "eui-neo-module"
+version = "0.1.0"
+description = "Module layer over EUI-NEO engine (C++23 modules)"
+license = "Apache-2.0"
+standard = "c++23"
+
+[build]
+    include_dirs = ["engine", "engine/include"]
+    # 0.5.5 引擎改 char8_t 破坏（path::u8string() 当 std::string 用）；上游亦用 -fno-char8_t。
+    # 不要在此放 -std=...：标准由 [package].standard 控制。
+    cxxflags = ["-fno-char8_t"]
+    sources = [
+      "engine/core/platform/async.cpp",
+      "engine/core/platform/json.cpp",
+      "engine/core/platform/native_bridge.c",
+      "engine/core/platform/network.cpp",
+      "engine/core/platform/performance_stats.cpp",
+      "generated/eui_neo_platform_tu.cpp",
+      "engine/core/platform/tray_bridge.c",
+      "engine/core/render/image.cpp",
+      "engine/core/render/image_facade.cpp",
+      "engine/core/render/image_source.cpp",
+      "engine/core/render/primitive.cpp",
+      "engine/core/render/render_backend.cpp",
+      "engine/core/render/shadertoy.cpp",
+      "engine/core/render/shadertoy_json.cpp",
+      "engine/core/render/shadertoy_primitive.cpp",
+      "engine/core/render/stb_image_impl.cpp",
+      "engine/core/render/text.cpp",
+      "engine/core/render/opengl/opengl_backend.cpp",
+      "engine/core/render/opengl/opengl_image.cpp",
+      "engine/core/render/opengl/opengl_primitives.cpp",
+      "engine/core/render/opengl/opengl_shadertoy.cpp",
+      "engine/core/render/opengl/opengl_text.cpp",
+      "engine/core/platform/ime_bridge.c",
+      "engine/core/window/window_backend.cpp",
+    ]
+
+[generated_files]
+    "generated/eui_neo_platform_tu.cpp" = """
+    #include "core/platform/platform.cpp"
+    """
+
+[dependencies]
+    compat.freetype = "2.13.3"
+    compat.libpng   = "1.6.43"
+    compat.zlib     = "1.3.2"
+    compat.opengl   = "2026.05.31"
+    compat.glad     = "0.0.0-651a425"
+    compat.glfw     = "3.4"
+    compat.yyjson   = "0.12.0"
+    compat.tray     = "0.0.0-8dd1358"
+
+[features]
+sdl2    = []
+vulkan  = []
+network = []
+
+[feature-deps.sdl2]
+compat.sdl2 = "2.32.10"
+[feature-deps.vulkan]
+compat.vulkan = "1.4.357.0"
+[feature-deps.network]
+compat.curl = "8.21.0"
+
+[targets.engine-smoke]
+kind = "bin"
+main = "demo/main.cpp"

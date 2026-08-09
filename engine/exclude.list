@@ -1,0 +1,9 @@
+# Files REMOVED from the vendored engine tree on purpose (kept as a trace).
+#
+# core/app/glfw_app_main.cpp   - upstream MTA `int main()` entry; would collide
+#                                with our own main -> multiple definition. Host
+#                                loop is written by the consumer instead.
+# core/app/sdl2_app_main.cpp   - same, SDL2 variant.
+# core/app/                    - whole dir removed (headers above + the two mains).
+# **/CMakeLists.txt            - upstream build system is not used; mcpp.toml
+#                                carries the exact compile recipe instead.

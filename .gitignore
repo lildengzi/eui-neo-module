@@ -1,0 +1,12 @@
+# mcpp build artifacts + auto-materialized generated TU
+target/
+compile_commands.json
+mcpp.lock
+generated/
+
+# editor / OS
+.DS_Store
+*.swp
+*.swo
+.vscode/
+.idea/
