@@ -130,6 +130,7 @@ void* createRenderBackend(eui::window::Handle window) {
     if (raw == nullptr) {
         return nullptr;
     }
+    core::render::activeRenderBackendSlot() = backend.get();
     detail::ownedBackends()[raw] = std::move(backend);
     return raw;
 }
@@ -137,6 +138,9 @@ void* createRenderBackend(eui::window::Handle window) {
 void destroyRenderBackend(void* backend) {
     if (backend == nullptr) {
         return;
+    }
+    if (core::render::activeRenderBackend() == backend) {
+        core::render::activeRenderBackendSlot() = nullptr;
     }
     detail::ownedBackends().erase(backend);
 }

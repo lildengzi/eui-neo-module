@@ -9,7 +9,10 @@ standard = "c++23"
     include_dirs = ["engine", "engine/include"]
     # 0.5.5 引擎改 char8_t 破坏（path::u8string() 当 std::string 用）；上游亦用 -fno-char8_t。
     # 不要在此放 -std=...：标准由 [package].standard 控制。
-    cxxflags = ["-fno-char8_t"]
+    # EUI_RENDER_BACKEND_OPENGL：vendored 引擎不走 compat.eui-neo 的
+    # mcpp_eui_backends.h 强制 include，需手动选中 OpenGL 渲染后端（GLFW 是
+    # EUI_WINDOW_BACKEND_SDL2 未定义时的默认）。
+    cxxflags = ["-fno-char8_t", "-DEUI_RENDER_BACKEND_OPENGL=1"]
     sources = [
       "mod/**/*.cppm",
       "engine/core/platform/async.cpp",
@@ -84,3 +87,7 @@ main = "demo/runtime_main.cpp"
 [targets.platform-smoke]
 kind = "bin"
 main = "demo/platform_main.cpp"
+
+[targets.app-smoke]
+kind = "bin"
+main = "demo/app_main.cpp"
