@@ -72,3 +72,7 @@ main = "demo/main.cpp"
 [targets.types-smoke]
 kind = "bin"
 main = "demo/types_main.cpp"
+
+[targets.dsl-smoke]
+kind = "bin"
+main = "demo/dsl_main.cpp"
