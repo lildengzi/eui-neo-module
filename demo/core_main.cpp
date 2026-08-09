@@ -1,5 +1,7 @@
 #include <cstdio>
 
+#include "core/dsl.h"
+
 import eui.core;
 
 int main() {

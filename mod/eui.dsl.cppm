@@ -17,24 +17,7 @@ module;
 #include "core/input/input_state.h"
 #include "core/window/window_backend.h"
 
-#include <algorithm>
-#include <cmath>
-#include <cstddef>
-#include <cstdint>
-#include <functional>
-#include <type_traits>
-#include <memory>
-#include <string>
-#include <unordered_map>
-#include <utility>
-#include <vector>
-
-export module eui.dsl;
-
-export {
 #include "core/dsl.h"
-}
-
 #include "core/runtime/runtime_instances.h"
 #include "core/runtime/runtime_geometry.h"
 #include "core/runtime/runtime_dirty.h"
@@ -43,9 +26,8 @@ export {
 #include "core/runtime/runtime_render_helpers.h"
 #include "core/runtime/runtime_state_bindings.h"
 #include "core/runtime/runtime_animation.h"
-
-export {
 namespace core::dsl {
+
 
 class Runtime {
 public:
@@ -457,14 +439,38 @@ private:
 };
 
 
-}
 
 }
-
-export {
 #include "core/runtime/runtime_lifecycle.h"
-}
-
 #include "core/runtime/runtime_input.h"
 #include "core/runtime/runtime_update.h"
 #include "core/runtime/runtime_render.h"
+
+
+export module eui.dsl;
+
+export {
+using ::core::dsl::AnimProperty;
+using ::core::dsl::Ease;
+using ::core::dsl::Transition;
+using ::core::dsl::utf8;
+using ::core::dsl::ElementKind;
+using ::core::dsl::HitTestMode;
+using ::core::dsl::LoaderMode;
+using ::core::dsl::Screen;
+using ::core::dsl::DragEvent;
+using ::core::dsl::Element;
+using ::core::dsl::Ui;
+using ::core::dsl::LoaderBuilder;
+using ::core::dsl::StateStore;
+using ::core::dsl::BuilderBase;
+using ::core::dsl::ShapeBuilderBase;
+using ::core::dsl::LayoutBuilder;
+using ::core::dsl::RectBuilder;
+using ::core::dsl::ShadertoyBuilder;
+using ::core::dsl::PolygonBuilder;
+using ::core::dsl::TextBuilder;
+using ::core::dsl::ImageBuilder;
+using ::core::dsl::SvgBuilder;
+using ::core::dsl::Runtime;
+}

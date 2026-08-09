@@ -1,6 +1,7 @@
 #include <cassert>
 #include <cstdio>
 #include <string>
+#include "core/dsl.h"
 
 import eui.types;
 import eui.dsl;

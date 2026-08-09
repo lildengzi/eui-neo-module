@@ -2,6 +2,8 @@
 #define GLFW_INCLUDE_NONE
 #endif
 #include <GLFW/glfw3.h>
+
+#include "core/dsl.h"
 #include "core/render/render_backend.h"
 
 #include <cstdio>

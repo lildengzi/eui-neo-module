@@ -1,4 +1,7 @@
 #include <cassert>
+
+#include "core/dsl.h"
+#include "core/dsl_runtime.h"
 #include <cstdio>
 #include "core/window/window_backend.h"
 

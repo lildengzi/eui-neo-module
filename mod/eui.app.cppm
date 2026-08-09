@@ -2,6 +2,8 @@ module;
 
 #include <string>
 #include <utility>
+#include "core/dsl.h"
+#include "core/dsl_runtime.h"
 
 export module eui.app;
 
