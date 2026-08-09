@@ -11,6 +11,7 @@ standard = "c++23"
     # 不要在此放 -std=...：标准由 [package].standard 控制。
     cxxflags = ["-fno-char8_t"]
     sources = [
+      "mod/**/*.cppm",
       "engine/core/platform/async.cpp",
       "engine/core/platform/json.cpp",
       "engine/core/platform/native_bridge.c",
@@ -67,3 +68,7 @@ compat.curl = "8.21.0"
 [targets.engine-smoke]
 kind = "bin"
 main = "demo/main.cpp"
+
+[targets.types-smoke]
+kind = "bin"
+main = "demo/types_main.cpp"
