@@ -91,3 +91,7 @@ main = "demo/platform_main.cpp"
 [targets.app-smoke]
 kind = "bin"
 main = "demo/app_main.cpp"
+
+[targets.components-smoke]
+kind = "bin"
+main = "demo/components_main.cpp"
