@@ -449,28 +449,28 @@ private:
 
 export module eui.dsl;
 
-export {
-using ::core::dsl::AnimProperty;
-using ::core::dsl::Ease;
-using ::core::dsl::Transition;
+export namespace core::dsl {
+using AnimProperty = ::core::dsl::AnimProperty;
+using Ease = ::core::dsl::Ease;
+using Transition = ::core::dsl::Transition;
 using ::core::dsl::utf8;
-using ::core::dsl::ElementKind;
-using ::core::dsl::HitTestMode;
-using ::core::dsl::LoaderMode;
-using ::core::dsl::Screen;
-using ::core::dsl::DragEvent;
-using ::core::dsl::Element;
-using ::core::dsl::Ui;
-using ::core::dsl::LoaderBuilder;
-using ::core::dsl::StateStore;
+using ElementKind = ::core::dsl::ElementKind;
+using HitTestMode = ::core::dsl::HitTestMode;
+using LoaderMode = ::core::dsl::LoaderMode;
+using Screen = ::core::dsl::Screen;
+using DragEvent = ::core::dsl::DragEvent;
+using Element = ::core::dsl::Element;
+using Ui = ::core::dsl::Ui;
+using LoaderBuilder = ::core::dsl::LoaderBuilder;
+using StateStore = ::core::dsl::StateStore;
 using ::core::dsl::BuilderBase;
 using ::core::dsl::ShapeBuilderBase;
-using ::core::dsl::LayoutBuilder;
-using ::core::dsl::RectBuilder;
-using ::core::dsl::ShadertoyBuilder;
-using ::core::dsl::PolygonBuilder;
-using ::core::dsl::TextBuilder;
-using ::core::dsl::ImageBuilder;
-using ::core::dsl::SvgBuilder;
-using ::core::dsl::Runtime;
+using LayoutBuilder = ::core::dsl::LayoutBuilder;
+using RectBuilder = ::core::dsl::RectBuilder;
+using ShadertoyBuilder = ::core::dsl::ShadertoyBuilder;
+using PolygonBuilder = ::core::dsl::PolygonBuilder;
+using TextBuilder = ::core::dsl::TextBuilder;
+using ImageBuilder = ::core::dsl::ImageBuilder;
+using SvgBuilder = ::core::dsl::SvgBuilder;
+using Runtime = ::core::dsl::Runtime;
 }

@@ -104,3 +104,7 @@ main = "demo/components_main.cpp"
 [targets.core-smoke]
 kind = "bin"
 main = "demo/core_main.cpp"
+
+[targets.dsl-import-probe]
+kind = "bin"
+main = "demo/dsl_import_probe.cpp"
