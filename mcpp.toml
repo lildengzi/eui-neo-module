@@ -12,7 +12,12 @@ standard = "c++23"
     # EUI_RENDER_BACKEND_OPENGL：vendored 引擎不走 compat.eui-neo 的
     # mcpp_eui_backends.h 强制 include，需手动选中 OpenGL 渲染后端（GLFW 是
     # EUI_WINDOW_BACKEND_SDL2 未定义时的默认）。
-    cxxflags = ["-fno-char8_t", "-DEUI_RENDER_BACKEND_OPENGL=1"]
+    cxxflags = ["-DEUI_RENDER_BACKEND_OPENGL=1"]
+    flags = [
+      { glob = "engine/**/*.cpp", cxxflags = ["-fno-char8_t"] },
+      { glob = "engine/**/*.c", cxxflags = ["-fno-char8_t"] },
+      { glob = "generated/**/*.cpp", cxxflags = ["-fno-char8_t"] },
+    ]
     sources = [
       "mod/**/*.cppm",
       "engine/core/platform/async.cpp",
