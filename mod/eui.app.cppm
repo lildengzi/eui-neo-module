@@ -66,6 +66,10 @@ public:
         return runtime_.isAnimating();
     }
 
+    void requestFullPaint() {
+        runtime_.requestFullPaint();
+    }
+
     void render(int w, int h, float dpi) {
         if (w <= 0 || h <= 0 || dpi <= 0.0f) {
             return;
