@@ -57,7 +57,7 @@ standard = "c++23"
     compat.tray     = "0.0.0-8dd1358"
 
 [features]
-sdl2    = []
+sdl2    = { defines = ["EUI_WINDOW_BACKEND_SDL2=1"] }
 vulkan  = []
 network = []
 
