@@ -80,3 +80,7 @@ main = "demo/dsl_main.cpp"
 [targets.runtime-smoke]
 kind = "bin"
 main = "demo/runtime_main.cpp"
+
+[targets.platform-smoke]
+kind = "bin"
+main = "demo/platform_main.cpp"
